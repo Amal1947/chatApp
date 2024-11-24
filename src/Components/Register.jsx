@@ -11,7 +11,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('https://chat-app2-roan.vercel.app/api/register', {
+            await axios.post('https://chatappbackend-1-nm92.onrender.com/api/register', {
                 username,
                 password
             });
