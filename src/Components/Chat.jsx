@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = 'https://chatappbackend-1-nm92.onrender.com';
 
 const Chat = () => {
     const location = useLocation();
