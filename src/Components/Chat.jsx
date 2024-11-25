@@ -21,7 +21,6 @@ const Chat = () => {
     const messagesEndRef = useRef(null);
     const typingTimeoutRef = useRef(null);
 
-    // Load message history when selecting a user
     useEffect(() => {
         const loadMessageHistory = async () => {
             if (selectedUser && user) {
@@ -100,6 +99,7 @@ const Chat = () => {
     const handleTyping = () => {
         if (socket && selectedUser) {
             if (typingTimeoutRef.current) {
+
                 clearTimeout(typingTimeoutRef.current);
             }
 
@@ -168,14 +168,12 @@ const Chat = () => {
                     </div>
                 )}
             </div>
-            {/* Toggle Button for Mobile */}
             <button
                 className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-indigo-600 text-white rounded-md"
                 onClick={toggleSidebar}
             >
                 {sidebarOpen ? 'Close' : 'Menu'}
             </button>
-            {/* Chat Area */}
             <div className="flex-1 flex flex-col">
                 <div className="flex-1 overflow-y-auto p-4 space-y-4">
                     {selectedUser ? (
@@ -212,7 +210,6 @@ const Chat = () => {
                     <div ref={messagesEndRef} />
                 </div>
 
-                {/* Input Area */}
                 <form
                     className="border-t border-gray-200 p-4 flex items-center space-x-2"
                     onSubmit={sendMessage}

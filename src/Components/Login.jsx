@@ -10,7 +10,6 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
-   // Frontend - Login.js - Update Response Handling
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -22,10 +21,8 @@ const handleSubmit = async (e) => {
           password
       });
 
-      // Get the user details directly from the response
       const { userId, username: user } = response.data;
 
-      // Save user info locally (No token involved)
       localStorage.setItem('userId', userId);
       localStorage.setItem('username', user);
 
